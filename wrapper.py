@@ -2,7 +2,7 @@ from textblob import TextBlob
 
 
 
-class blobwrapper:
+class blob_wrapper:
   text=''
   
   
@@ -55,6 +55,35 @@ class blobwrapper:
       sentz= self.text.sentences
       return sentz
     
+    def plural (self, text=''):
+      self._check_arguments(text)
+      wordlist= self.text.words
+      pll=wordlist.plralize()
+      return pll
+    
+    def spelling (self, text=''):
+      self._check_arguments(text)
+      spell= self.text.correct
+      return spell
+    
+    def frequencies (self, text='', word='', case_sens):
+      self._check_arguments(text)
+      freq= sef.text.words.count(word, case_sensitive= case_sens)
+      return freq
+    
+    def parsing (self, text=''):
+      self._check_arguments(text)
+      return self.text.parse()
+    
+    
+    def n_grams (self, text='', m):
+      self._check_arguments(text)
+      return self.text.ngrams(n=m)
+    
+    
+    
+ 
+      
     
     
       
